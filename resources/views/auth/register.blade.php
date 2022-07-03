@@ -4,33 +4,72 @@
     <div class="flex justify-center" id="post">
         <div class="w-6/12 bg-white p-6 rounded-lg">
             <form action="{{ route('register') }}" method="post">
-                 <div class="mb-4">
-                    <label for="name" class="sr-only">Name</label>
-                    <input type="text" name="name" id="name" placeholder="Your name" class="bg-gray-100 border-2 w-full p-4 rounded-lg" value="">
-                 </div>
+                <div class="form">
+                <div class="title">Welcome</div>
+                <div class="subtitle">Let's create your account!</div>
+                @csrf
+                    <div class="input-container ic1">
+                      <input id="name" class="input" type="text" placeholder=" " name="name" value="{{ old('name') }}"/>
+                      <div class="cut"></div>
+                      <label for="name" class="placeholder" class="sr-only">Name</label>
 
-                 <div class="mb-4">
-                    <label for="username" class="sr-only">Username</label>
-                    <input type="text" name="username" id="username" placeholder="Username" class="bg-gray-100 border-2 w-full p-4 rounded-lg" value="">
-                 </div>
+                      @error('name')
+                        <div class="error_message">
+                            {{ $message }}
+                        </div>
+                      @enderror
+                    </div>
 
-                 <div class="mb-4">
-                    <label for="email" class="sr-only">Email</label>
-                    <input type="text" name="email" id="email" placeholder="Your Email" class="bg-gray-100 border-2 w-full p-4 rounded-lg" value="">
-                 </div>
+                    <div class="input-container ic1">
+                      <input id="username" class="input" type="text" placeholder=" " name="username" value="{{ old('username') }}"/>
+                      <div class="cut"></div>
+                      <label for="username" class="placeholder" class="sr-only">Username</label>
 
-                 <div class="mb-4">
-                    <label for="password" class="sr-only">Password</label>
-                    <input type="password" name="password" id="password" placeholder="Choose a password" class="bg-gray-100 border-2 w-full p-4 rounded-lg" value="">
-                 </div>
+                      @error('username')
+                        <div class="error_message">
+                            {{ $message }}
+                        </div>
+                      @enderror
+                    </div>
 
-                 <div class="mb-4">
-                    <label for="password_confirmation" class="sr-only">Password confirm</label>
-                    <input type="password" name="password_confirmation" id="password_confirmation" placeholder="password confirm" class="bg-gray-100 border-2 w-full p-4 rounded-lg" value="">
-                 </div>
+                    <div class="input-container ic1">
+                      <input id="email" class="input" type="text" placeholder=" " name="email" value="{{ old('email') }}"/>
+                      <div class="cut"></div>
+                      <label for="email" class="placeholder" class="sr-only">Email</label>
 
-                 <div>
-                    <button type="submit" class="bg-blue-500 text-white px-4 py-3 rounded font-medium w-full" id="button"><span>Register</span></button>
+                      @error('email')
+                        <div class="error_message">
+                            {{ $message }}
+                        </div>
+                      @enderror
+                    </div>
+
+                    <div class="input-container ic1">
+                      <input id="password" class="input" type="password" placeholder=" " name="password" />
+                      <div class="cut cut-short"></div>
+                      <label for="password" class="placeholder" class="sr-only">Password</label>
+
+
+                      @error('password')
+                        <div class="error_message">
+                            {{ $message }}
+                        </div>
+                      @enderror
+                    </div>
+
+                    <div class="input-container ic1">
+                      <input id="password_confirmation" class="input" type="password" placeholder=" " name="password_confirmation"/>
+                      <div class="cut cut-short"></div>
+                      <label for="password_confirmation" class="placeholder" class="sr-only">Password confirmation</label>
+
+
+                      @error('password_confirmation')
+                        <div class="error_message">
+                            {{ $message }}
+                        </div>
+                      @enderror
+                    </div>
+                    <button type="submit" class="submit" id="button">submit</button>
                 </div>
             </form>
         </div>
