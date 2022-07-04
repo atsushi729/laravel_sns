@@ -12,7 +12,6 @@
                       <input id="name" class="input" type="text" placeholder=" " name="name" value="{{ old('name') }}"/>
                       <div class="cut"></div>
                       <label for="name" class="placeholder" class="sr-only">Name</label>
-
                       @error('name')
                         <div class="error_message">
                             {{ $message }}
@@ -24,7 +23,6 @@
                       <input id="username" class="input" type="text" placeholder=" " name="username" value="{{ old('username') }}"/>
                       <div class="cut"></div>
                       <label for="username" class="placeholder" class="sr-only">Username</label>
-
                       @error('username')
                         <div class="error_message">
                             {{ $message }}
@@ -36,7 +34,6 @@
                       <input id="email" class="input" type="text" placeholder=" " name="email" value="{{ old('email') }}"/>
                       <div class="cut"></div>
                       <label for="email" class="placeholder" class="sr-only">Email</label>
-
                       @error('email')
                         <div class="error_message">
                             {{ $message }}
@@ -48,8 +45,6 @@
                       <input id="password" class="input" type="password" placeholder=" " name="password" />
                       <div class="cut cut-short"></div>
                       <label for="password" class="placeholder" class="sr-only">Password</label>
-
-
                       @error('password')
                         <div class="error_message">
                             {{ $message }}
@@ -61,15 +56,13 @@
                       <input id="password_confirmation" class="input" type="password" placeholder=" " name="password_confirmation"/>
                       <div class="cut cut-short"></div>
                       <label for="password_confirmation" class="placeholder" class="sr-only">Password confirmation</label>
-
-
                       @error('password_confirmation')
                         <div class="error_message">
                             {{ $message }}
                         </div>
                       @enderror
                     </div>
-                    <button type="submit" class="submit" id="button">submit</button>
+                    <button type="submit" class="submit" id="button">Submit</button>
                 </div>
             </form>
         </div>
