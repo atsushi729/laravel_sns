@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
+    // if user is already login, then redirect to dashboard.
+    public function __construct()
+    {
+        $this->middleware(['guest']);
+    }
+
+    // it redirect to login page, then input information will be used at store function(below).
     public function index()
     {
         return view('auth.login');
@@ -20,7 +27,8 @@ class LoginController extends Controller
             'password' => 'required|'
         ]);
 
-        if (!auth()->attempt($request->only('email', 'password'))) {
+        // remember method will create new token to remember user information.
+        if (!auth()->attempt($request->only('email', 'password'), $request->remember)) {
             return back()->with('status', 'Invalid login details');
         }
 
