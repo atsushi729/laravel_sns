@@ -699,3 +699,16 @@ video {
 #checkbox {
     color: white;
 }
+
+.name {
+    font-weight: bold;
+}
+
+.date {
+    color: gray;
+    margin: 5px
+}
+
+.body {
+    margin-x: 5px
+}
