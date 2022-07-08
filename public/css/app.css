@@ -648,7 +648,7 @@ video {
   font-size: 18px;
   height: 50px;
   margin-top: 38px;
-  // outline: 0;
+  outline: 0;
   text-align: center;
   width: 100%;
 }
@@ -706,9 +706,18 @@ video {
 
 .date {
     color: gray;
-    margin: 5px
+    margin: 5px;
 }
 
 .body {
-    margin-x: 5px
+    margin-x: 5px;
+}
+
+.posted-info {
+    padding-y: 10px;
+}
+
+#likes {
+    margin-right: 10px;
+    color: blue;
 }
