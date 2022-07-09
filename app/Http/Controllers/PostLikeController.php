@@ -15,6 +15,7 @@ class PostLikeController extends Controller
 
     public function store(Post $post, Request $request)
     {
+        // if user already liked some post, then show only ""unlike" button
         if ($post->likedBy($request->user())) {
             return response(null, 400);
         }
