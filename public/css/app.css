@@ -717,7 +717,15 @@ video {
     padding-y: 10px;
 }
 
-#likes {
+#like_reaction {
+    margin-right: 10px;
+    color: blue;
+}
+#unlike_reaction {
+    margin-right: 10px;
+    color: blue;
+}
+#delete_reaction {
     margin-right: 10px;
     color: blue;
 }
