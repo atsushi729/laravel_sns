@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\User;
+use App\Mail\PostLiked;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+
 
 class PostLikeController extends Controller
 {
@@ -12,10 +16,9 @@ class PostLikeController extends Controller
         $this->middleware(['auth']);
     }
 
-
     public function store(Post $post, Request $request)
     {
-        // if user already liked some post, then show only ""unlike" button
+        // if user already liked some post, then show only "unlike" button
         if ($post->likedBy($request->user())) {
             return response(null, 400);
         }
@@ -23,6 +26,9 @@ class PostLikeController extends Controller
         $post->likes()->create([
             'user_id' => $request->user()->id,
         ]);
+
+        // when user liked someone's post, then it will notify to posted user.
+        Mail::to($post->user)->send(new PostLiked(auth()->user(), $post));
 
         return back();
     }
