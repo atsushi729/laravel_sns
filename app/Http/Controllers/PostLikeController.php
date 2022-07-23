@@ -27,6 +27,7 @@ class PostLikeController extends Controller
             'user_id' => $request->user()->id,
         ]);
 
+        if (!$post->likes()->onlyTrashed()->where('user_id', $request->user()->id)->count())
         // when user liked someone's post, then it will notify to posted user.
         Mail::to($post->user)->send(new PostLiked(auth()->user(), $post));
 
