@@ -7,15 +7,15 @@ use App\Http\Responders\HomeResponder;
 
 class HomeController extends Controller
 {
-    protected $homeResponder;
+    private $responder;
 
-    public function __construct(HomeResponder $homeResponder)
+    public function __construct(HomeResponder $responder)
     {
-        $this->homeResponder = $homeResponder;
+        $this->responder = $responder;
     }
 
     public function __invoke()
     {
-        return $this->homeResponder->show();
+        return $this->responder->show();
     }
 }
