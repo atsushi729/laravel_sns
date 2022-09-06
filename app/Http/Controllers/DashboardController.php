@@ -4,18 +4,21 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Mail\PostLiked;
-use Illuminate\Http\Request;
+use App\Http\Responders\DashboardResponder;
 use Illuminate\Support\Facades\Mail;
 
 class DashboardController extends Controller
 {
-    public function __construct()
+    protected $dashboardResponder;
+
+    public function __construct(DashboardResponder $dashboardResponder)
     {
+        $this->dashboardResponder = $dashboardResponder;
         $this->middleware(['auth']);
     }
 
-    public function index()
+    public function __invoke()
     {
-        return view('dashboard');
+        return $this->dashboardResponder->show();
     }
 }
