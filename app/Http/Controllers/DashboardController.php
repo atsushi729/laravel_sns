@@ -9,16 +9,16 @@ use Illuminate\Support\Facades\Mail;
 
 class DashboardController extends Controller
 {
-    protected $dashboardResponder;
+    private $responder;
 
-    public function __construct(DashboardResponder $dashboardResponder)
+    public function __construct(DashboardResponder $responder)
     {
-        $this->dashboardResponder = $dashboardResponder;
+        $this->responder = $responder;
         $this->middleware(['auth']);
     }
 
     public function __invoke()
     {
-        return $this->dashboardResponder->show();
+        return $this->responder->show();
     }
 }
