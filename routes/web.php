@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PostLikeController;
 use App\Http\Controllers\UserPostController;
@@ -11,8 +10,8 @@ use App\Http\Controllers\Auth\RegisterController;
 
 
 // Show
-Route::get('/', function () {return view('home');})->name('home');
-Route::get ('/dashboard', DashboardController::class)->name('dashboard');
+Route::get('/', \App\Http\Controllers\HomeController::class)->name('home');
+Route::get ('/dashboard', \App\Http\Controllers\DashboardController::class)->name('dashboard');
 Route::get ('/login', [LoginController::class, 'index'])->name('login');
 Route::get('/users/{user:username}/posts', [UserPostController::class, 'index'])->name('users.posts');
 Route::get ('/register', [RegisterController::class, 'index'])->name('register');
