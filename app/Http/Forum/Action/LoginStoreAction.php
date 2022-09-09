@@ -3,22 +3,25 @@
 namespace App\Http\Forum\Action;
 
 use \App\Http\Controllers\Controller;
-use App\Http\Forum\Domain\Login;
-use Illuminate\Http\Request;
+use App\Http\Forum\Usecase\Login;
+use App\Http\Requests\LoginRequest;
 
 class LoginStoreAction extends Controller
 {
-    private $domain;
+    private $usecase;
 
-    public function __construct(Login $domain)
+    public function __construct(Login $usecase)
     {
-        $this->domain = $domain;
-        $this->middleware(['guest']);
+        $this->usecase = $usecase;
     }
 
-    public function __invoke(Request $request)
+    public function __invoke(LoginRequest $request)
     {
-        return $this->domain->store($request);
+        $email = $request->get('email');
+        $password = $request->get('password');
+        $remember = (bool) $request->get('remember');
+
+        return $this->usecase->run($email, $password, $remember);
     }
 }
 

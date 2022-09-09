@@ -12,7 +12,6 @@ class LoginIndexAction extends Controller
     public function __construct(LoginIndexResponder $responder)
     {
         $this->responder = $responder;
-        $this->middleware(['guest']);
     }
 
     public function __invoke()
