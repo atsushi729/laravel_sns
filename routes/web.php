@@ -22,8 +22,8 @@ Route::post ('/register', [RegisterController::class, 'store']);
 
 // Login
 Route::middleware('guest')->group(function() {
-    Route::get ('/login', \App\Http\Action\LoginIndexAction::class)->name('login');
-    Route::post ('/login', \App\Http\Action\LoginStoreAction::class);
+    Route::get ('/login', \App\Http\Actions\LoginIndexAction::class)->name('login');
+    Route::post ('/login', \App\Http\Actions\LoginStoreAction::class);
 });
 
 // Update

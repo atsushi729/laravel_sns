@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Action;
+namespace App\Http\Actions;
 
 use App\Http\Controllers\Controller;
 use App\Http\Responders\LoginIndexResponder;
