@@ -17,7 +17,7 @@ Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show')
 
 // Create
 Route::post('/posts', [PostController::class, 'store']);
-Route::post ('/logout', [LogoutController::class, 'store'])->name('logout');
+Route::post ('/logout', \App\Http\Actions\LogoutStoreAction::class)->name('logout');
 Route::post ('/register', [RegisterController::class, 'store']);
 
 // Login
