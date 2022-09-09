@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Forum\Usecase;
+namespace App\Usecase;
 
 use Illuminate\Support\Facades\Auth;
 
@@ -8,8 +8,7 @@ use App\Enums\CompanyContractStatus;
 use App\Services\Api\Sso\Company\GetCompanyClient;
 use App\Services\Api\Sso\LoginInitClient;
 
-
-class Login
+class LoginUsecase
 {
     public function run(string $email, string $password, bool $remember)
     {

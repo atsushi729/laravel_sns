@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Forum\Action;
+namespace App\Http\Action;
 
 use App\Http\Controllers\Controller;
-use App\Http\Forum\Responders\LoginIndexResponder;
+use App\Http\Responders\LoginIndexResponder;
 
 class LoginIndexAction extends Controller
 {

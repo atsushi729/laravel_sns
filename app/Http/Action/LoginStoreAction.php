@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Forum\Action;
+namespace App\Http\Action;
 
 use \App\Http\Controllers\Controller;
-use App\Http\Forum\Usecase\Login;
 use App\Http\Requests\LoginRequest;
+use App\Usecase\LoginUsecase;
 
 class LoginStoreAction extends Controller
 {
     private $usecase;
 
-    public function __construct(Login $usecase)
+    public function __construct(LoginUsecase $usecase)
     {
         $this->usecase = $usecase;
     }

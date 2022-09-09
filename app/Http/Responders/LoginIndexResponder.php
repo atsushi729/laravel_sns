@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Forum\Responders;
+namespace App\Http\Responders;
 
 class LoginIndexResponder
 {
