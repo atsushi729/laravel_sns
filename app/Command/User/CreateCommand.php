@@ -4,17 +4,19 @@ declare(strict_types=1);
 
 namespace App\Command\User;
 
-class CreateCommand
+use App\Command\User\ICreateCommand;
+
+class CreateCommand implements ICreateCommand
 {
     private string $name;
     private string $username;
-    private ?string $email;
+    private string $email;
     private string $password;
 
     public function __construct(
         string $name,
         string $username,
-        ?string $email,
+        string $email,
         string $password
     ) {
         $this->name = $name;
@@ -33,7 +35,7 @@ class CreateCommand
         return $this->username;
     }
 
-    public function getEmail(): ?string
+    public function getEmail(): string
     {
         return $this->email;
     }
