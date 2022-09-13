@@ -4,11 +4,9 @@
 namespace App\Http\Responders;
 
 
-use App\Models\Post;
-
 class PostShowResponder
 {
-    public function handle(Post $post)
+    public function handle($post)
     {
         return view('posts.show', [
             'post' => $post,
