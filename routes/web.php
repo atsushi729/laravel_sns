@@ -1,15 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserPostController;
-
 
 Route::get('/', \App\Http\Controllers\HomeController::class)->name('home');
 Route::get ('/dashboard', \App\Http\Controllers\DashboardController::class)->name('dashboard');
-Route::get('/users/{user:username}/posts', [UserPostController::class, 'index'])->name('users.posts');
+Route::get('/users/{user:username}/posts', \App\Http\Actions\UserPostIndexAction::class)->name('users.posts');
 Route::get('/posts', \App\Http\Actions\PostIndexAction::class)->name('posts');
 Route::get('/posts/{post}', \App\Http\Actions\PostShowAction::class)->name('posts.show');
-
 Route::post ('/logout', \App\Http\Actions\LogoutStoreAction::class)->name('logout');
 
 Route::middleware('guest')->group(function() {
