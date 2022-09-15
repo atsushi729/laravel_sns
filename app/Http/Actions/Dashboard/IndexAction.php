@@ -4,7 +4,7 @@
 namespace App\Http\Actions\Dashboard;
 
 
-use App\Http\Responders\DashboardResponder;
+use App\Http\Responders\Dashboard\DashboardResponder;
 
 class IndexAction
 {

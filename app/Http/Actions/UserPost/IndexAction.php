@@ -5,7 +5,7 @@ namespace App\Http\Actions\UserPost;
 
 
 use App\Models\User;
-use App\Http\Responders\UserPostIndexResponder;
+use App\Http\Responders\UserPost\UserPostIndexResponder;
 use App\Usecase\UserPost\UserPostIndexUsecase;
 
 class IndexAction

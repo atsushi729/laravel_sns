@@ -3,7 +3,7 @@
 namespace App\Http\Actions\Login;
 
 use App\Http\Controllers\Controller;
-use App\Http\Responders\LoginIndexResponder;
+use App\Http\Responders\Login\LoginIndexResponder;
 
 class IndexAction extends Controller
 {

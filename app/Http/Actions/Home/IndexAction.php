@@ -4,7 +4,7 @@
 namespace App\Http\Actions\Home;
 
 
-use App\Http\Responders\HomeResponder;
+use App\Http\Responders\Home\HomeResponder;
 
 class IndexAction
 {

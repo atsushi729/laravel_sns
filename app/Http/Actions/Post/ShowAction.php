@@ -4,7 +4,7 @@
 namespace App\Http\Actions\Post;
 
 
-use App\Http\Responders\PostShowResponder;
+use App\Http\Responders\Post\PostShowResponder;
 use App\Models\Post;
 
 

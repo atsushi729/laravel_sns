@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Responders;
+namespace App\Http\Responders\Dashboard;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Responders;
+namespace App\Http\Responders\Register;
 
 class RegisterIndexResponder
 {

@@ -3,7 +3,7 @@
 namespace App\Http\Actions\Register;
 
 use \App\Http\Controllers\Controller;
-use \App\Http\Responders\RegisterIndexResponder;
+use \App\Http\Responders\Register\RegisterIndexResponder;
 
 class IndexAction extends Controller
 {

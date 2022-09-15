@@ -4,7 +4,7 @@
 namespace App\Http\Actions\Post;
 
 
-use App\Http\Responders\PostIndexResponder;
+use App\Http\Responders\Post\PostIndexResponder;
 use App\Usecase\Post\IndexUsecase;
 
 class IndexAction
