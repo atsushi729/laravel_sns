@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Actions;
+namespace App\Http\Actions\Register;
 
 use \App\Http\Controllers\Controller;
-use App\Http\Requests\RegisterRequest;
 use \App\Http\Responders\RegisterIndexResponder;
 
-class RegisterIndexAction extends Controller
+class IndexAction extends Controller
 {
     private $responder;
 

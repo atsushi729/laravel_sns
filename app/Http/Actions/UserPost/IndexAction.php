@@ -1,13 +1,14 @@
 <?php
 
 
-namespace App\Http\Actions;
+namespace App\Http\Actions\UserPost;
 
 
 use App\Models\User;
-use App\Usecase\UserPostIndexUsecase;
+use App\Http\Responders\UserPostIndexResponder;
+use App\Usecase\UserPost\UserPostIndexUsecase;
 
-class UserPostIndexAction
+class IndexAction
 {
     private $usecase;
 

@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Actions;
+namespace App\Http\Actions\Login;
 
 use \App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
-use App\Usecase\LoginUsecase;
+use App\Usecase\Login\LoginUsecase;
 
-class LoginStoreAction extends Controller
+class StoreAction extends Controller
 {
     private $usecase;
 

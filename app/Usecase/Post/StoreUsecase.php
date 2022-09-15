@@ -1,10 +1,10 @@
 <?php
 
 
-namespace App\Usecase;
+namespace App\Usecase\Post;
 
 
-class PostStoreUsecase
+class StoreUsecase
 {
     public function store($request)
     {

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Usecase;
+namespace App\Usecase\UserPost;
 
 
 class UserPostIndexUsecase

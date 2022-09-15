@@ -1,17 +1,17 @@
 <?php
 
 
-namespace App\Http\Actions;
+namespace App\Http\Actions\Post;
 
 
 use App\Http\Requests\PostRequest;
-use App\Usecase\PostStoreUsecase;
+use App\Usecase\Post\StoreUsecase;
 
-class PostStoreAction
+class StoreAction
 {
     private $usecase;
 
-    public function __construct(PostStoreUsecase $usecase)
+    public function __construct(StoreUsecase $usecase)
     {
         $this->usecase = $usecase;
     }

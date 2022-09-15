@@ -1,11 +1,11 @@
 <?php
 
 
-namespace App\Usecase;
+namespace App\Usecase\Post;
 
 use App\Models\Post;
 
-class PostIndexUsecase
+class IndexUsecase
 {
     public function run()
     {

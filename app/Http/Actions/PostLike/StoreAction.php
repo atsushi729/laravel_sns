@@ -1,18 +1,18 @@
 <?php
 
 
-namespace App\Http\Actions;
+namespace App\Http\Actions\PostLike;
 
 
 use App\Models\Post;
-use App\Usecase\PostLikeStoreUsecase;
+use App\Usecase\PostLike\StoreUsecase;
 use Illuminate\Http\Request;
 
-class PostLikeStoreAction
+class StoreAction
 {
     private $usecase;
 
-    public function __construct(PostLikeStoreUsecase $usecase)
+    public function __construct(StoreUsecase $usecase)
     {
         $this->usecase = $usecase;
     }

@@ -1,10 +1,10 @@
 <?php
 
 
-namespace App\Usecase;
+namespace App\Usecase\PostLike;
 
 
-class PostLikeDestroyUsecase
+class DestroyUsecase
 {
     public function destroy($post, $request)
     {

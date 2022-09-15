@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Actions;
+namespace App\Http\Actions\Login;
 
 use App\Http\Controllers\Controller;
 use App\Http\Responders\LoginIndexResponder;
 
-class LoginIndexAction extends Controller
+class IndexAction extends Controller
 {
     private $responder;
 

@@ -1,14 +1,14 @@
 <?php
 
 
-namespace App\Http\Actions;
+namespace App\Http\Actions\Post;
 
 
 use App\Http\Responders\PostShowResponder;
 use App\Models\Post;
 
 
-class PostShowAction
+class ShowAction
 {
     private $responder;
 

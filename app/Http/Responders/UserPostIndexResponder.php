@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Http\Actions;
+namespace App\Http\Responders;
 
 
 class UserPostIndexResponder

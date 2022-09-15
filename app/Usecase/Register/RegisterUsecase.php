@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Usecase;
+namespace App\Usecase\Register;
 
 use App\Command\User\CreateCommand;
 use App\Models\User;

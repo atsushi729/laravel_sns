@@ -1,14 +1,14 @@
 <?php
 
 
-namespace App\Http\Actions;
+namespace App\Http\Actions\Register;
 
 use App\Command\User\CreateCommand;
 use \App\Http\Controllers\Controller;
 use App\Http\Requests\RegisterRequest;
-use App\Usecase\RegisterUsecase;
+use App\Usecase\Register\RegisterUsecase;
 
-class RegisterStoreAction extends Controller
+class StoreAction extends Controller
 {
     private $usecase;
 

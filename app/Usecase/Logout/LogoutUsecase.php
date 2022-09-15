@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Usecase;
+namespace App\Usecase\Logout;
 
 class LogoutUsecase
 {

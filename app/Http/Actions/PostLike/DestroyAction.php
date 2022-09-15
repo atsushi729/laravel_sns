@@ -1,18 +1,18 @@
 <?php
 
 
-namespace App\Http\Actions;
+namespace App\Http\Actions\PostLike;
 
 
 use App\Models\Post;
-use App\Usecase\PostLikeDestroyUsecase;
+use App\Usecase\PostLike\DestroyUsecase;
 use Illuminate\Http\Request;
 
-class PostLikeDestroyAction
+class DestroyAction
 {
     private $usecase;
 
-    public function __construct(PostLikeDestroyUsecase $usecase)
+    public function __construct(DestroyUsecase $usecase)
     {
         $this->usecase = $usecase;
     }

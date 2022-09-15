@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Actions;
+namespace App\Http\Actions\Logout;
 
-use App\Usecase\LogoutUsecase;
+use App\Usecase\Logout\LogoutUsecase;
 
-class LogoutStoreAction
+class StoreAction
 {
     private $usecase;
 

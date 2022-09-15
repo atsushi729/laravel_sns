@@ -1,19 +1,19 @@
 <?php
 
 
-namespace App\Http\Actions;
+namespace App\Http\Actions\Post;
 
 
 use App\Http\Responders\PostIndexResponder;
-use App\Usecase\PostIndexUsecase;
+use App\Usecase\Post\IndexUsecase;
 
-class PostIndexAction
+class IndexAction
 {
     private $usecase;
 
     private $responder;
 
-    public function __construct(PostIndexUsecase $usecase, PostIndexResponder $responder)
+    public function __construct(IndexUsecase $usecase, PostIndexResponder $responder)
     {
         $this->usecase = $usecase;
         $this->responder = $responder;

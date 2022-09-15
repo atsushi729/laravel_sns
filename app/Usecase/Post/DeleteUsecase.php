@@ -1,12 +1,12 @@
 <?php
 
 
-namespace App\Usecase;
+namespace App\Usecase\Post;
 
 use Illuminate\Support\Facades\Auth;
 
 
-class PostDeleteUsecase
+class DeleteUsecase
 {
     public function destroy($post)
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Usecase;
+namespace App\Usecase\Login;
 
 use Illuminate\Support\Facades\Auth;
 

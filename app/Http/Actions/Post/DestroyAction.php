@@ -1,17 +1,17 @@
 <?php
 
 
-namespace App\Http\Actions;
+namespace App\Http\Actions\Post;
 
 
 use App\Models\Post;
-use App\Usecase\PostDeleteUsecase;
+use App\Usecase\Post\DeleteUsecase;
 
-class PostDestroyAction
+class DestroyAction
 {
     private $usecase;
 
-    public function __construct(PostDeleteUsecase $usecase)
+    public function __construct(DeleteUsecase $usecase)
     {
         $this->usecase = $usecase;
     }
