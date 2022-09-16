@@ -44,6 +44,11 @@
              @endif
             </ul>
         </nav>
+        @if (session('flash_message'))
+            <div class="alert alert-info" role="alert">
+                <strong>{{ session('flash_message') }}</strong>
+            </div>
+        @endif
         @yield('content')
     </body>
 </html>
