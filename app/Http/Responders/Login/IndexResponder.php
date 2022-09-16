@@ -2,7 +2,7 @@
 
 namespace App\Http\Responders\Login;
 
-class LoginIndexResponder
+class IndexResponder
 {
     public function respond()
     {

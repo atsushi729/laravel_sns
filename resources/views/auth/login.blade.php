@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+    @if (session('flash_message'))
+        <div class="alert alert-danger alert-block">
+            <strong>{{ session('flash_message') }}</strong>
+        </div>
+    @endif
     <div class="flex justify-center" id="post">
         <div class="w-6/12 bg-white p-6 rounded-lg">
             @if (session('status'))
@@ -35,8 +40,8 @@
                        @enderror
                     </div>
 
-                    <div class="mb-4" >
-                        <div class="flex items-center">
+                    <div class="mb-4">
+                        <div class="flex items-center" style="padding-top: 22px">
                             <input type="checkbox" name="remember" id="remember" class="mr-2">
                             <label for="remember" id="checkbox">Remember me</label>
                         </div>
