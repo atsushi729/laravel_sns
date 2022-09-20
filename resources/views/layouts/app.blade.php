@@ -44,9 +44,14 @@
              @endif
             </ul>
         </nav>
-        @if (session('flash_message'))
+        @if (session('success_message'))
             <div class="alert alert-info" role="alert">
-                <strong>{{ session('flash_message') }}</strong>
+                <strong>{{ session('success_message') }}</strong>
+            </div>
+        @endif
+        @if (session('error_message'))
+            <div class="alert alert-danger" role="alert">
+                <strong>{{ session('error_message') }}</strong>
             </div>
         @endif
         @yield('content')

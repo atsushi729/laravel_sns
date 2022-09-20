@@ -6,15 +6,20 @@ namespace App\Http\Actions\Register;
 use App\Command\User\CreateCommand;
 use \App\Http\Controllers\Controller;
 use App\Http\Requests\RegisterRequest;
+use App\Http\Responders\Register\RegisterStoreResponder;
 use App\Usecase\Register\RegisterUsecase;
 
 class StoreAction extends Controller
 {
     private $usecase;
 
-    public function __construct(RegisterUsecase $usecase)
+    private $responder;
+
+    public function __construct(RegisterUsecase $usecase, RegisterStoreResponder $responder)
     {
         $this->usecase = $usecase;
+
+        $this->responder = $responder;
     }
 
     public function __invoke(RegisterRequest $request)
@@ -26,6 +31,6 @@ class StoreAction extends Controller
 
         $command = new CreateCommand($name, $username, $email, $password);
 
-        return $this->usecase->run($command);
+        return $this->responder->handle($this->usecase->run($command));
     }
 }
