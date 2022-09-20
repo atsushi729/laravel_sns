@@ -11,11 +11,11 @@ class StoreResponder
     public function handle(Payload $payload): Response
     {
         if ($payload->getStatus() === Payload::SUCCESS) {
-            return redirect()->route('dashboard')->with('flash_message', 'ログインに成功しました。');
+            return redirect()->route('dashboard')->with('success_message', 'ログインに成功しました。');
         }
 
         if ($payload->getStatus() === Payload::FAILED) {
-            return back()->with('flash_message', 'ログインに失敗しました。');
+            return back()->with('error_message', 'ログインに失敗しました。');
         }
         throw UndefinedStatusException::fromStatus($payload->getStatus());
     }
