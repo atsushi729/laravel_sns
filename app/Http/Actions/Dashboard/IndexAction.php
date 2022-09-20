@@ -4,13 +4,13 @@
 namespace App\Http\Actions\Dashboard;
 
 
-use App\Http\Responders\Dashboard\DashboardResponder;
+use App\Http\Responders\Dashboard\IndexResponder;
 
 class IndexAction
 {
     private $responder;
 
-    public function __construct(DashboardResponder $responder)
+    public function __construct(IndexResponder $responder)
     {
         $this->responder = $responder;
     }

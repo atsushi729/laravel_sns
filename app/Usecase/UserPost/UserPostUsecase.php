@@ -4,7 +4,7 @@
 namespace App\Usecase\UserPost;
 
 
-class UserPostIndexUsecase
+class UserPostUsecase
 {
     public function get($user)
     {

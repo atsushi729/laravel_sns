@@ -6,7 +6,7 @@ namespace App\Http\Actions\Post;
 
 use App\Http\Requests\PostRequest;
 use App\Usecase\Post\StoreUsecase;
-use App\Http\Responders\Post\PostStoreResponder;
+use App\Http\Responders\Post\StoreResponder;
 
 class StoreAction
 {
@@ -14,7 +14,7 @@ class StoreAction
 
     private $responder;
 
-    public function __construct(StoreUsecase $usecase, PostStoreResponder $responder)
+    public function __construct(StoreUsecase $usecase, StoreResponder $responder)
     {
         $this->usecase = $usecase;
         $this->responder = $responder;

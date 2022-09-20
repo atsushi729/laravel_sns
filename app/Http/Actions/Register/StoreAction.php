@@ -6,7 +6,7 @@ namespace App\Http\Actions\Register;
 use App\Command\User\CreateCommand;
 use \App\Http\Controllers\Controller;
 use App\Http\Requests\RegisterRequest;
-use App\Http\Responders\Register\RegisterStoreResponder;
+use App\Http\Responders\Register\StoreResponder;
 use App\Usecase\Register\RegisterUsecase;
 
 class StoreAction extends Controller
@@ -15,7 +15,7 @@ class StoreAction extends Controller
 
     private $responder;
 
-    public function __construct(RegisterUsecase $usecase, RegisterStoreResponder $responder)
+    public function __construct(RegisterUsecase $usecase, StoreResponder $responder)
     {
         $this->usecase = $usecase;
 

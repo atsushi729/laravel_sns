@@ -7,7 +7,7 @@ use App\Http\Payload;
 use Illuminate\Routing\ResponseFactory;
 use Symfony\Component\HttpFoundation\Response;
 
-class RegisterStoreResponder
+class StoreResponder
 {
     private $responseFactory;
 

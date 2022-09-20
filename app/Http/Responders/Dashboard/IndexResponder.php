@@ -5,7 +5,7 @@ namespace App\Http\Responders\Dashboard;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-class DashboardResponder
+class IndexResponder
 {
     public function show()
     {

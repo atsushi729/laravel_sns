@@ -4,7 +4,7 @@
 namespace App\Http\Actions\Post;
 
 
-use App\Http\Responders\Post\PostIndexResponder;
+use App\Http\Responders\Post\IndexResponder;
 use App\Usecase\Post\IndexUsecase;
 
 class IndexAction
@@ -13,7 +13,7 @@ class IndexAction
 
     private $responder;
 
-    public function __construct(IndexUsecase $usecase, PostIndexResponder $responder)
+    public function __construct(IndexUsecase $usecase, IndexResponder $responder)
     {
         $this->usecase = $usecase;
         $this->responder = $responder;

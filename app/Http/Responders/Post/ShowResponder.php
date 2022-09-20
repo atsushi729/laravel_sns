@@ -4,7 +4,7 @@
 namespace App\Http\Responders\Post;
 
 
-class PostShowResponder
+class ShowResponder
 {
     public function handle($post)
     {

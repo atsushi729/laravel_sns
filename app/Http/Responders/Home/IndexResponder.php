@@ -2,7 +2,7 @@
 
 namespace App\Http\Responders\Home;
 
-class HomeResponder
+class IndexResponder
 {
     public function show()
     {

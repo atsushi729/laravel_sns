@@ -6,7 +6,7 @@ namespace App\Http\Actions\Post;
 
 use App\Models\Post;
 use App\Usecase\Post\DeleteUsecase;
-use App\Http\Responders\Post\PostDestroyResponder;
+use App\Http\Responders\Post\DestroyResponder;
 
 class DestroyAction
 {
@@ -14,7 +14,7 @@ class DestroyAction
 
     private $responder;
 
-    public function __construct(DeleteUsecase $usecase, PostDestroyResponder $responder)
+    public function __construct(DeleteUsecase $usecase, DestroyResponder $responder)
     {
         $this->usecase = $usecase;
         $this->responder = $responder;
