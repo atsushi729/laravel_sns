@@ -5,7 +5,9 @@ namespace App\Usecase\Register;
 use App\Command\User\CreateCommand;
 use App\Http\Payload;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 
 
 class RegisterUsecase
@@ -13,6 +15,7 @@ class RegisterUsecase
     public function run(CreateCommand $command)
     {
         try {
+            DB::beginTransaction();
             User::create([
                 'username' => $command->getUsername(),
                 'name' => $command->getName(),
@@ -24,7 +27,11 @@ class RegisterUsecase
                 'email' => $command->getEmail(),
                 'password' => $command->getPassword(),
             ]);
+            DB::commit();
+
         } catch(\Exception $e) {
+            Log::error($e);
+            DB::rollBack();
             return (new Payload())->setStatus(Payload::FAILED);
         }
 
