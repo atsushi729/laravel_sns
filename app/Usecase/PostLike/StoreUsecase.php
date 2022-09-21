@@ -26,12 +26,12 @@ class StoreUsecase
             ]);
             DB::commit();
 
-            return (new Payload())->setStatus(Payload::CREATED);
         } catch (\Exception $e) {
             Log::error($e);
             DB::rollBack();
 
             return (new Payload())->setStatus(Payload::FAILED);
         }
+            return (new Payload())->setStatus(Payload::CREATED);
     }
 }

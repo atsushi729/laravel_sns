@@ -17,12 +17,12 @@ class StoreUsecase
             $request->user()->posts()->create($request->only('body'));
             DB::commit();
 
-            return (new Payload())->setStatus(Payload::SUCCESS);
         } catch (\Exception $e) {
             Log::error($e);
             DB::rollBack();
 
             return (new Payload())->setStatus(Payload::FAILED);
         }
+            return (new Payload())->setStatus(Payload::SUCCESS);
     }
 }

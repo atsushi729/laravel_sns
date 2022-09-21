@@ -32,9 +32,9 @@ class RegisterUsecase
         } catch(\Exception $e) {
             Log::error($e);
             DB::rollBack();
+
             return (new Payload())->setStatus(Payload::FAILED);
         }
-
         return (new Payload())->setStatus(Payload::CREATED);
     }
 }
