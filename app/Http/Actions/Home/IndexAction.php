@@ -4,13 +4,13 @@
 namespace App\Http\Actions\Home;
 
 
-use App\Http\Responders\Home\HomeResponder;
+use App\Http\Responders\Home\IndexResponder;
 
 class IndexAction
 {
     private $responder;
 
-    public function __construct(HomeResponder $responder)
+    public function __construct(IndexResponder $responder)
     {
         $this->responder = $responder;
     }

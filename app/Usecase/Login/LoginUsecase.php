@@ -2,6 +2,7 @@
 
 namespace App\Usecase\Login;
 
+use App\Http\Payload;
 use Illuminate\Support\Facades\Auth;
 
 use App\Enums\CompanyContractStatus;
@@ -15,15 +16,16 @@ class LoginUsecase
         try {
             return $this->login($email, $password, $remember);
         } catch (\Exception $e) {
-            return $e->getMessage();
+            return (new Payload())->setStatus(Payload::FAILED);
         }
     }
 
     public function login(string $email, string $password, bool $remember)
     {
         if (Auth::attempt(['email' => $email, 'password' => $password], $remember)) {
-            return redirect()->route('dashboard',);
+            return (new Payload())->setStatus(Payload::SUCCESS);
+        } else {
+            return (new Payload())->setStatus(Payload::FAILED);
         }
-        return redirect()->route('dashboard');
     }
 }

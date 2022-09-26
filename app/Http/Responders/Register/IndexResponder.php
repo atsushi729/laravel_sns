@@ -2,7 +2,7 @@
 
 namespace App\Http\Responders\Register;
 
-class RegisterIndexResponder
+class IndexResponder
 {
     public function handle()
     {

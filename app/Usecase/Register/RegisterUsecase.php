@@ -3,6 +3,7 @@
 namespace App\Usecase\Register;
 
 use App\Command\User\CreateCommand;
+use App\Http\Payload;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
@@ -23,11 +24,10 @@ class RegisterUsecase
                 'email' => $command->getEmail(),
                 'password' => $command->getPassword(),
             ]);
-
-            return redirect()->intended('dashboard');
-
         } catch(\Exception $e) {
-            return redirect()->route('home');
+            return (new Payload())->setStatus(Payload::FAILED);
         }
+
+        return (new Payload())->setStatus(Payload::CREATED);
     }
 }

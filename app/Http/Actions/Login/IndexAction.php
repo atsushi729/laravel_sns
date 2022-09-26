@@ -3,13 +3,13 @@
 namespace App\Http\Actions\Login;
 
 use App\Http\Controllers\Controller;
-use App\Http\Responders\Login\LoginIndexResponder;
+use App\Http\Responders\Login\IndexResponder;
 
 class IndexAction extends Controller
 {
     private $responder;
 
-    public function __construct(LoginIndexResponder $responder)
+    public function __construct(IndexResponder $responder)
     {
         $this->responder = $responder;
     }

@@ -4,7 +4,7 @@
 namespace App\Http\Responders\Post;
 
 
-class PostIndexResponder
+class IndexResponder
 {
     public function handle($post)
     {
