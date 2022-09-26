@@ -5,6 +5,9 @@ namespace App\Usecase\Post;
 
 use App\Http\Payload;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
+
 
 
 class DeleteUsecase
@@ -12,12 +15,18 @@ class DeleteUsecase
     public function destroy($post)
     {
         try {
+            DB::beginTransaction();
             if(Auth::id() == $post->user_id){
                 $post->delete();
             }
-            return (new Payload())->setStatus(Payload::SUCCESS);
+            DB::commit();
+
         } catch (\Exception $e) {
+            Log::error($e);
+            DB::rollBack();
+
             return (new Payload())->setStatus(Payload::FAILED);
         }
+        return (new Payload())->setStatus(Payload::SUCCESS);
     }
 }
